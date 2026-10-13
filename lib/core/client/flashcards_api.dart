@@ -5,5 +5,5 @@ abstract class FlashcardsApi {
   static final createFlashcardsSet = "$base/flashcards/word";
 
   /// Methods: [POST]
-  static final createAudios = "$base/tts";
+  static final generateSpeech = "$base/tts";
 }
