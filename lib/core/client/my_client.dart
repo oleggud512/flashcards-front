@@ -67,6 +67,10 @@ class MyClient with ActionExecutor {
     );
   }
 
+  void close() {
+    _defaultClient.close();
+  }
+
   Future<Result<MyClientError, T>> request<T>({
     required MyClientMethod method,
     required String url,

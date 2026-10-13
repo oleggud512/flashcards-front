@@ -1,0 +1,1 @@
+enum FlashcardType { lexical, contextual }
