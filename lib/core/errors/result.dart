@@ -1,22 +1,13 @@
-sealed class Result<E, V> {
-  V? get valueOrNull => switch (this) {
-    Success(:final value) => value,
-    Failure() => null,
-  };
-}
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class Success<E, V> extends Result<E, V> {
-  final V value;
-  Success(this.value);
+part 'result.freezed.dart';
 
-  @override
-  String toString() => "$runtimeType($value)";
-}
+@freezed
+sealed class Result<E, V> with _$Result<E, V> {
+  const factory Result.success(V value) = Success;
+  const factory Result.failure(E failure) = Failure;
 
-class Failure<E, V> extends Result<E, V> {
-  final E failure;
-  Failure(this.failure);
+  const Result._();
 
-  @override
-  String toString() => "$runtimeType($failure)";
+  V? get valueOrNull => whenOrNull(success: (value) => value);
 }
