@@ -1,5 +1,7 @@
 import 'package:flashcards/core/extensions/dev.dart';
-import 'package:flutter/material.dart';
+import 'package:flashcards/core/navigation/app_routes.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:go_router/go_router.dart';
 
 class CreateRequestScreen extends StatelessWidget {
   const CreateRequestScreen({super.key});
@@ -21,7 +23,7 @@ class CreateRequestScreen extends StatelessWidget {
             ),
             FilledButton(
               onPressed: () {
-                //
+                context.goNamed(AppRoutes.selectActiveBatch.name);
               },
               child: Text('Batch: ${'some batch'.hc}'),
             ),

@@ -1,5 +1,5 @@
 import 'package:flashcards/core/extensions/dev.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SelectActiveBatchScreen extends StatelessWidget {
   const SelectActiveBatchScreen({super.key});
